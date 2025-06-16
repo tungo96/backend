@@ -21,9 +21,9 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
         password: configService.get('DATABASE_PASSWORD'),
         database: configService.get('DATABASE_NAME'),
         autoLoadEntities: true,
-        synchronize: false, // Tắt tự động sync
+        synchronize: true, // Tắt tự động sync
         migrations: ['dist/migrations/*.js'], // Đường dẫn đến các file migrations
-        migrationsRun: false, // Không tự động chạy migrations khi khởi động
+        migrationsRun: true, // Không tự động chạy migrations khi khởi động
         logging: true,
       }),
       inject: [ConfigService],
