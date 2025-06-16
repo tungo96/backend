@@ -1,7 +1,7 @@
 // backend/src/users/user.entity.ts
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
-@Entity()
+@Entity('users')
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
@@ -11,6 +11,9 @@ export class User {
 
   @Column({ unique: true })
   email: string;
+
+  @Column()
+  type: string;
 
   @Column()
   password: string;
