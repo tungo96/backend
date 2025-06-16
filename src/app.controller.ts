@@ -22,7 +22,6 @@ export class AppController {
         // Thử thực hiện một query đơn giản
         await this.dataSource.query('SELECT 1');
         const options = this.dataSource.options as any;
-        console.log(options);
         return {
           status: 'success',
           message: 'Database connection is successful',
