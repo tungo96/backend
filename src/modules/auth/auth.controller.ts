@@ -12,7 +12,7 @@ import {
     @Post('register')
     async register(@Body() body) {
       try {
-        return await this.authService.register(body.email, body.password);
+        return await this.authService.register(body.email, body.password, body.username, body.type);
       } catch (error) {
         throw new UnauthorizedException(error.message);
       }
@@ -29,6 +29,14 @@ import {
       } catch (error) {
         throw new UnauthorizedException(error.message);
       }
+    }
+  
+    @Post('refresh')
+    async refreshTokens(@Body('refreshToken') refreshToken: string) {
+      if (!refreshToken) {
+        throw new UnauthorizedException('Refresh token not provided');
+      }
+      return this.authService.refreshTokens(refreshToken);
     }
   
     @UseGuards(JwtAuthGuard)
