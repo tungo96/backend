@@ -1,5 +1,5 @@
 import { DataSource } from 'typeorm';
-import { User } from '../../shared/entities/user.entity';
+import { User } from '../shared/entities/user.entity';
 import * as bcrypt from 'bcrypt';
 import * as dotenv from 'dotenv';
 

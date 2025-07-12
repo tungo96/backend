@@ -14,8 +14,9 @@ RUN npm install
 # Copy toàn bộ mã nguồn
 COPY . .
 
+
 # Mở port mặc định NestJS
-EXPOSE 3000
+EXPOSE 5000
 
 # Chạy ở chế độ dev (hot reload)
 CMD ["npm", "run", "start:dev"]
